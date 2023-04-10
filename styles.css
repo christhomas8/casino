@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.head{
+
+    font-family: cursive;
+    min-height: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    font-family: 'Bree Serif', serif;
+    background-color: teal;
+}
+
+#addBtn {
+    padding: 13px 50px;
+    background-color: rgb(77, 184, 86);
+    color:white;
+}
+
+#item {
+    padding: 13px 50px;
+    font-size: 15px;
+}
+
+#startBtn {
+    padding: 25px 100px;
+    background-color: rgb(167, 31, 7);
+    color:white;
+}
+
+#spinBtn {
+    padding: 25px 100px;
+    background-color: rgb(77, 105, 184);
+    color:white;
+}
+
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff7f2a, 0 0 40px #ff7f2a, 0 0 50px #ff7f2a, 0 0 60px #ff7f2a, 0 0 70px #ff7f2a;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #f86604, 0 0 40px #f86604, 0 0 50px #f86604, 0 0 60px #f86604, 0 0 70px #f86604, 0 0 80px #ff4da6;
+    }
+  }
