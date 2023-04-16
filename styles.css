@@ -12,6 +12,7 @@
 
 .head h1 { 
     margin-top: 100px;
+    background-color: black;
 }
 
 body {
@@ -42,6 +43,23 @@ body {
     color:white;
 }
 
+.slot-row {
+    display: flex;
+    background-color: black;
+    padding: 15px;
+}
+
+.slot-img {
+    flex: 33.33%;
+    padding: 5px;
+    border: solid white 3px;
+}
+
+.slot-row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 .glow {
     font-size: 80px;
