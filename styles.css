@@ -17,7 +17,7 @@
 
 body {
     font-family: 'Bree Serif', serif;
-    background-color: teal;
+    background-color: /*teal*/ black;
 }
 
 #addBtn {
