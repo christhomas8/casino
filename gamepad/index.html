@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet"> 
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>SLOTS</title>
+
+</head>
+<body>
+    <div class="head">
+    </div>
+    <div class="slot-row"> 
+        <div class="slot-img">
+			<button type="button" onclick="myFunction()">Button</button>
+        </div>
+    </div>
+
+    <script>
+        let gamepads = navigator.getGamepads();
+        getDevices();
+        let y;
+        var button;
+
+        myFunction();
+
+        function getDevices()
+        {
+            for (let i = 0; i < gamepads.length; i++)
+            {
+                console.log("Gamepad " + i + ":");
+
+                if (gamepads[i] == null)
+                {
+                    console.log("[null]");
+                    continue;
+                }
+
+                if (!gamepads[i].connected) 
+                {
+                    console.log("[disconnected]");
+                    continue;
+                }
+
+                console.log("    Index: " + gamepads[i].index);
+                console.log("    ID: " + gamepads[i].id);
+                console.log("    Axes: " + gamepads[i].axes.length);
+                console.log("    Buttons: " + gamepads[i].buttons.length);
+                console.log("    Mapping: " + gamepads[i].mapping);
+            }
+        }
+
+        function repeat()
+        {
+            window.setTimeout(myFunction, 100);
+        }
+    	
+        function myFunction()
+    	{
+            y = null;
+            var joy = new JoyStick('joyDiv');
+
+            //select first device
+            gamepads = navigator.getGamepads();
+                
+            if (gamepads.length > 0 ){
+                console.log(gamepads[0]);
+                y = gamepads.axes;
+                if (y != null)
+                {
+                    console.log(y);
+                }
+            }
+
+            repeat();
+    
+    		//console.log(!!(navigator.getGamepads));//(!!(navigator.getGamepads);
+    		//return !!(navigator.getGamepads);
+            
+        }
+    </script>
+         
+</body>
+</html>
