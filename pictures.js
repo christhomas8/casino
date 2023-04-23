@@ -2,6 +2,28 @@ var counter=0;
 var rand1;
 var rand2;
 var rand3;
+var spinning = false;
+
+window.addEventListener('gamepadconnected', (event) => {
+    const update = () => {
+    const output = document.getElementById('axes');
+    //output.innerHTML = ''; // clear the output
+
+    for (const gamepad of navigator.getGamepads()) {
+    if (!gamepad) continue;
+    for (const [index, axis] of gamepad.axes.entries()) {
+        if (index == 1 && axis == 1 && spinning == false)
+        {
+            console.log(index, axis);
+            myFunction();
+        }
+            
+    }
+    }
+        requestAnimationFrame(update);
+    };
+    update();
+});
         
 function repeat()
 {	
@@ -10,18 +32,16 @@ function repeat()
 
 function myFunction() {
     var pic = [
-        /*
-        "images/setitoff.jpeg",
-        "images/titanic.jpeg",
-        //"images/karaoke small.png",
-        "images/fav.png",
-        "images/2023 Calendar.png",
-        "images/setitoff.jpeg",
-        "images/titanic.jpeg",
-        //"images/karaoke small.png",
-        "images/fav.png",
-        "images/2023 Calendar.png"
-        */
+       "images/a1.PNG",
+       "images/a2.PNG",
+       "images/a3.PNG",
+       "images/a4.PNG",
+       "images/a5.PNG",
+       "images/a1.PNG",
+       "images/a2.PNG",
+       "images/a3.PNG",
+       "images/a4.PNG",
+       "images/a5.PNG",
        "images/a1.PNG",
        "images/a2.PNG",
        "images/a3.PNG",
@@ -29,7 +49,7 @@ function myFunction() {
        "images/a5.PNG"
     ];
     document.getElementById("result").innerText= "";
-    
+    spinning = true;
     
     if (counter < 16)
     {
@@ -52,6 +72,7 @@ function myFunction() {
     
     else {
         counter = 0;
+        spinning = false;
         if (rand1 == rand2 && rand1 == rand3 && rand2 == rand3)
         {
             document.getElementById("result").innerText = "Win";
@@ -64,6 +85,5 @@ function myFunction() {
         {
             document.getElementById("result").innerText= "Nothing";
         }
-        //document.getElementById("command").innerHTML = randcom+" Side";
     }
  }  

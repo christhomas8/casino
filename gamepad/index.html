@@ -23,6 +23,8 @@
     </div>
 
     <script>
+
+        /*
         let gamepads = navigator.getGamepads();
         getDevices();
         let y;
@@ -55,6 +57,31 @@
                 console.log("    Mapping: " + gamepads[i].mapping);
             }
         }
+        */
+
+        window.addEventListener('gamepadconnected', (event) => {
+        const update = () => {
+        const output = document.getElementById('axes');
+        //output.innerHTML = ''; // clear the output
+
+        for (const gamepad of navigator.getGamepads()) {
+        if (!gamepad) continue;
+        for (const [index, axis] of gamepad.axes.entries()) {
+            //output.insertAdjacentHTML('beforeend',
+            //`<label>${gamepad.index}, ${index}
+            //    <progress value=${axis * 0.5 + 0.5}></progress>
+            //</label>`);
+            if (index == 1 && axis != 0)
+            {
+                console.log(index, axis);
+            }
+                
+        }
+        }
+            requestAnimationFrame(update);
+        };
+        update();
+});
 
         function repeat()
         {
@@ -64,7 +91,7 @@
         function myFunction()
     	{
             y = null;
-            var joy = new JoyStick('joyDiv');
+            //var joy = new JoyStick('joyDiv');
 
             //select first device
             gamepads = navigator.getGamepads();
