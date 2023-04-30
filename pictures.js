@@ -4,6 +4,24 @@ var rand2;
 var rand3;
 var spinning = false;
 
+/*
+let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+scanner.addListener('scan', function (content) {
+  //alert(content);
+  document.getElementById("user").innerText = content;
+});
+Instascan.Camera.getCameras().then(function (cameras) {
+  if (cameras.length > 0) {
+    scanner.start(cameras[0]);
+  } else {
+    console.error('No cameras found.');
+  }
+}).catch(function (e) {
+  console.error(e);
+});
+*/
+
+
 window.addEventListener('gamepadconnected', (event) => {
     const update = () => {
     const output = document.getElementById('axes');
@@ -37,26 +55,17 @@ function myFunction() {
        "images/a3.PNG",
        "images/a4.PNG",
        "images/a5.PNG",
-       "images/a1.PNG",
-       "images/a2.PNG",
-       "images/a3.PNG",
-       "images/a4.PNG",
-       "images/a5.PNG",
-       "images/a1.PNG",
-       "images/a2.PNG",
-       "images/a3.PNG",
-       "images/a4.PNG",
-       "images/a5.PNG"
+       "images/seven.png"
     ];
     document.getElementById("result").innerText= "";
     spinning = true;
     
-    if (counter < 16)
+    if (counter < 25)
     {
         rand1 = pic[Math.floor(Math.random()*pic.length)];
         document.getElementById("pic1").src = rand1;
     }
-    if (counter < 26)
+    if (counter < 35)
     {
         rand2 = pic[Math.floor(Math.random()*pic.length)];
         document.getElementById("pic2").src = rand2;
@@ -64,7 +73,7 @@ function myFunction() {
     rand3 = pic[Math.floor(Math.random()*pic.length)];
     document.getElementById("pic3").src = rand3;
     
-    if (counter<36){
+    if (counter<45){
         repeat();
         counter = counter+1;
         document.getElementById("result").innerText= "";
