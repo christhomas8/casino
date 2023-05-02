@@ -50,22 +50,22 @@ function repeat()
 
 function myFunction() {
     var pic = [
-       "images/a1.PNG",
-       "images/a2.PNG",
-       "images/a3.PNG",
-       "images/a4.PNG",
-       "images/a5.PNG",
+       "images/karaoke.png",
+       "images/reach.jpg",
+       "images/rubiks.jpg",
+       "images/seven.png",
+       "images/titanic.jpeg",
        "images/seven.png"
     ];
     document.getElementById("result").innerText= "";
     spinning = true;
     
-    if (counter < 25)
+    if (counter < 20)
     {
         rand1 = pic[Math.floor(Math.random()*pic.length)];
         document.getElementById("pic1").src = rand1;
     }
-    if (counter < 35)
+    if (counter < 30)
     {
         rand2 = pic[Math.floor(Math.random()*pic.length)];
         document.getElementById("pic2").src = rand2;
@@ -73,7 +73,7 @@ function myFunction() {
     rand3 = pic[Math.floor(Math.random()*pic.length)];
     document.getElementById("pic3").src = rand3;
     
-    if (counter<45){
+    if (counter<40){
         repeat();
         counter = counter+1;
         document.getElementById("result").innerText= "";
