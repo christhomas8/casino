@@ -4,28 +4,9 @@ var rand2;
 var rand3;
 var spinning = false;
 
-/*
-let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-scanner.addListener('scan', function (content) {
-  //alert(content);
-  document.getElementById("user").innerText = content;
-});
-Instascan.Camera.getCameras().then(function (cameras) {
-  if (cameras.length > 0) {
-    scanner.start(cameras[0]);
-  } else {
-    console.error('No cameras found.');
-  }
-}).catch(function (e) {
-  console.error(e);
-});
-*/
-
-
 window.addEventListener('gamepadconnected', (event) => {
     const update = () => {
     const output = document.getElementById('axes');
-    //output.innerHTML = ''; // clear the output
 
     for (const gamepad of navigator.getGamepads()) {
     if (!gamepad) continue;
@@ -35,7 +16,6 @@ window.addEventListener('gamepadconnected', (event) => {
             console.log(index, axis);
             myFunction();
         }
-            
     }
     }
         requestAnimationFrame(update);
@@ -84,15 +64,15 @@ function myFunction() {
         spinning = false;
         if (rand1 == rand2 && rand1 == rand3 && rand2 == rand3)
         {
-            document.getElementById("result").innerText = "Win";
+            document.getElementById("result").innerText = "Winner!";
         }
         else if (rand1 == rand2 || rand2 == rand3 || rand1 == rand3)
         {
-            document.getElementById("result").innerText = "Almost";
+            document.getElementById("result").innerText = "Almost!";
         }
         else
         {
-            document.getElementById("result").innerText= "Nothing";
+            document.getElementById("result").innerText= "Try Again...";
         }
     }
  }  

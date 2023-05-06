@@ -11,8 +11,10 @@
 }
 
 .head h1 { 
-    margin: 20px 0px;
+    margin: 75px auto;
     background-color: black;
+    width: 90%;
+    border-radius: 40px;
 }
 
 body {
@@ -63,6 +65,14 @@ body {
     content: "";
     clear: both;
     display: table;
+}
+
+#result {
+    background-color: aliceblue;
+   text-align: center;
+    width:30%;
+    margin: 10px auto;
+    border-radius: 5px;
 }
 
 .glow {
